@@ -1,0 +1,41 @@
+<keymap version="1" name="Default copy 0" parent="$default">
+  <action id="Console.Execute" />
+  <action id="Console.TableResult.EditValue">
+    <keyboard-shortcut first-keystroke="f2" />
+    <keyboard-shortcut first-keystroke="alt enter" />
+  </action>
+  <action id="EditorChooseLookupItem" />
+  <action id="EditorDown">
+    <keyboard-shortcut first-keystroke="down" />
+    <keyboard-shortcut first-keystroke="ctrl alt l" />
+  </action>
+  <action id="EditorJoinLines" />
+  <action id="EditorLeft">
+    <keyboard-shortcut first-keystroke="left" />
+    <keyboard-shortcut first-keystroke="ctrl alt j" />
+  </action>
+  <action id="EditorNextWord">
+    <keyboard-shortcut first-keystroke="ctrl right" />
+    <keyboard-shortcut first-keystroke="shift ctrl semicolon" />
+  </action>
+  <action id="EditorPreviousWord">
+    <keyboard-shortcut first-keystroke="ctrl left" />
+    <keyboard-shortcut first-keystroke="shift ctrl j" />
+  </action>
+  <action id="EditorRight">
+    <keyboard-shortcut first-keystroke="right" />
+    <keyboard-shortcut first-keystroke="ctrl alt semicolon" />
+  </action>
+  <action id="EditorUp">
+    <keyboard-shortcut first-keystroke="up" />
+    <keyboard-shortcut first-keystroke="ctrl alt k" />
+  </action>
+  <action id="Images.Thumbnails.EnterAction" />
+  <action id="NextTemplateVariable">
+    <keyboard-shortcut first-keystroke="tab" />
+  </action>
+  <action id="ReformatCode">
+    <keyboard-shortcut first-keystroke="alt f6" />
+  </action>
+  <action id="SurroundWithLiveTemplate" />
+</keymap>
