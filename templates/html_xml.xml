@@ -1,0 +1,101 @@
+<templateSet group="html/xml">
+  <template name="t" value="&lt;$TAG$ $ATTRS$&gt;$END$&lt;/$TAG_NAME$&gt;" description="Tag pair" toReformat="true" toShortenFQNames="true">
+    <variable name="TAG" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ATTRS" expression="" defaultValue="&quot;&quot;" alwaysStopAt="false" />
+    <variable name="TAG_NAME" expression="firstWord(TAG)" defaultValue="&quot;&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="HTML_TEXT" value="true" />
+      <option name="XSL_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="T" value="&lt;$TAG$&gt;$SELECTION$&lt;/$TAGNAME$&gt;&#10;" description="Surround with &lt;tag&gt;&lt;/tag&gt;" toReformat="true" toShortenFQNames="true">
+    <variable name="TAG" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TAGNAME" expression="firstWord(TAG)" defaultValue="&quot;&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="XSL_TEXT" value="true" />
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="CD" value="&lt;![CDATA[&#10;$SELECTION$&#10;]]&gt;" description="Surround with CDATA section" toReformat="false" toShortenFQNames="false">
+    <context>
+      <option name="HTML" value="true" />
+      <option name="XSL_TEXT" value="true" />
+      <option name="XML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="c (comment)" value="&lt;?/*&#10;$SELECTION$&#10;*/?&gt;" toReformat="false" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="deb" value="&#10;&lt;?echo '&lt;pre&gt;';&#10;print_r($SELECTION$);&#10;echo '&lt;/pre&gt;';?&gt;&#10;" description="debug" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="true" />
+    </context>
+  </template>
+  <template name="&lt;sub&gt;" value="&lt;sub&gt;$SELECTION$&lt;/sub&gt;" toReformat="false" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="bxinit" value="&lt;?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true)die();?&gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="bxincfile" value="&lt;?$APPLICATION-&gt;IncludeFile('$ATTRS$');?&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="ATTRS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="echo" value="&lt;?=$SELECTION$?&gt;" shortcut="SPACE" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="echores" value="&lt;?=$arResult['$ATTRS$'];?&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="ATTRS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="if" value="&lt;?if($ELEMENTS$){?&gt;&#10;&#9;$END$&#10;&lt;?}?&gt;&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="ELEMENTS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="phpcom" value="&lt;?// $SELECTION$ ?&gt;" description="php comment" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="false" />
+      <option name="OTHER" value="true" />
+    </context>
+  </template>
+  <template name="ifsurround" value="&lt;?if($ELEMENTS$){?&gt;&#10;&#9;$SELECTION$&#10;&lt;?}?&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="ELEMENTS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="foreach" value="&lt;?foreach ($$$VAR$ as $$$VAR_KEY$ =&gt; $$$VAR_VALUE$) {?&gt;&#10;    $SELECTION$&#10;&lt;?}?&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR_VALUE" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR_KEY" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="bxincfilenoborder" value="&lt;?$APPLICATION-&gt;IncludeFile('$ATTRS$', array(), array('SHOW_BORDER' =&gt; false));?&gt;" toReformat="false" toShortenFQNames="true">
+    <variable name="ATTRS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="bxprolog" value="&lt;?require($_SERVER[&quot;DOCUMENT_ROOT&quot;] . &quot;/bitrix/modules/main/include/prolog_before.php&quot;);" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="bxincarea" value="&lt;?$APPLICATION-&gt;IncludeComponent(&quot;bitrix:main.include&quot;, &quot;&quot;, array(&quot;AREA_FILE_SHOW&quot; =&gt; &quot;file&quot;, &quot;PATH&quot; =&gt; &quot;/local/include_areas/&quot;), false);?&gt;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+</templateSet>

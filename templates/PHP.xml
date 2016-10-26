@@ -1,0 +1,48 @@
+<templateSet group="PHP">
+  <template name="deb" value="&#10;echo '&lt;pre&gt;';&#10;print_r($SELECTION$);&#10;echo '&lt;/pre&gt;';&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="SELECTION" expression="" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="resizeimg" value="$arSizes    = array('width'=&gt;150, 'height'=&gt;150);&#10;$file       = CFile::ResizeImageGet($arItem['PREVIEW_PICTURE'], $arSizes, BX_RESIZE_IMAGE_PROPORTIONAL, true);&#10;$arItem['PREVIEW_PICTURE'] = $file;&#10;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="!empty" value="&lt;?if(!empty($arResult['$PARAMETERS$'])){?&gt;&#10;&#9;$END$&#10;&lt;?}?&gt;&#10;" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMETERS" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="HTML" value="true" />
+    </context>
+  </template>
+  <template name="getelems" value="$arSort     = Array();&#10;$arSelect   = Array(&quot;ID&quot;, &quot;IBLOCK_ID&quot;, &quot;NAME&quot;, &quot;DATE_ACTIVE_FROM&quot;, 'PREVIEW_PICTURE', 'PREVIEW_TEXT', 'DETAIL_TEXT');&#10;$arFilter   = Array(&quot;IBLOCK_ID&quot;=&gt;'#IBLOCK_ID#', &quot;ACTIVE_DATE&quot;=&gt;&quot;Y&quot;, &quot;ACTIVE&quot;=&gt;&quot;Y&quot;);&#10;$res        = CIBlockElement::GetList($arSort, $arFilter, false, false, $arSelect);&#10;&#10;while($arItem = $res-&gt;GetNext()){&#10;&#10;&#9;if($arItem['PREVIEW_PICTURE']){&#10;&#9;&#9;$arItem['PREVIEW_PICTURE'] = CFile::GetFileArray($arItem['PREVIEW_PICTURE']);&#10;&#9;}&#10;&#10;&#9;//$arResult[] = $arItem;&#10;&#10;}&#10;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="getsections" value="$arSort     = Array();&#10;$arSelect   = Array(&quot;ID&quot;, &quot;IBLOCK_ID&quot;, &quot;NAME&quot;, 'SECTION_PAGE_URL');&#10;$arFilter   = Array('IBLOCK_ID'=&gt;CATALOG_IBLOCK_ID, 'GLOBAL_ACTIVE'=&gt;'Y');&#10;$db_list    = CIBlockSection::GetList($arSort, $arFilter, true, $arSelect);&#10;&#10;while($ar_result = $db_list-&gt;GetNext()){&#10;&#10;}&#10;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="thr" value="throw new $END$" description="throw new " toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="PHP Statement" value="true" />
+    </context>
+  </template>
+  <template name="updateproperty" value="$ELEMENT_ID = 0;  // код элемента&#10;&#10;$arProps = array(&#10;&#9;'' =&gt; '',&#10;);&#10;&#10;CIBlockElement::SetPropertyValuesEx($ELEMENT_ID, $IBLOCK_ID, $arProps);&#10;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="getusers" value="$arFilter = array(&#10;&#9;'ID' =&gt; '',&#10;&#9;'GROUPS_ID' =&gt; '',&#10;&#9;'ACTIVE'    =&gt; 'Y',&#10;);&#10;&#10;&#10;$arParameters = array(&#10;&#9;'SELECT'        =&gt; array('UF_FILIAL_LINK'),&#10;&#9;'FIELDS'        =&gt; array('ID', 'NAME', 'LOGIN', 'EMAIL'),&#10;&#9;'NAV_PARAMS '        =&gt; array('nTopCount' =&gt; 10),&#10;&#10;);&#10;&#10;$rsUsers   = CUser::GetList(($by=&quot;login&quot;), ($order=&quot;desc&quot;), $arFilter, $arParameters);&#10;$arUsers  = array();&#10;&#10;while($arUser = $rsUsers-&gt;GetNext()){&#10;&#9;$arUsers[] = $arUser;&#10;}&#10;&#10;" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="spf" value="static public function $CURSOR$(){&#10;}" toReformat="false" toShortenFQNames="true">
+    <variable name="CURSOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context />
+  </template>
+</templateSet>

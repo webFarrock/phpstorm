@@ -1,0 +1,11 @@
+<templateSet group="JavaScript">
+  <template name="php" value="&lt;?$SELECTION$?&gt;" toReformat="false" toShortenFQNames="true">
+    <context />
+  </template>
+  <template name="cl" value="console.log($CURSOR$);" toReformat="false" toShortenFQNames="true">
+    <variable name="CURSOR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>

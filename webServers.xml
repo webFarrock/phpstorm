@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fb3a1de3-ee55-4f09-941e-c49b7daea93c" name="emo" url="http://emo/">
+        <fileTransfer accessType="LOCAL" />
+      </webServer>
+      <webServer id="6834d3cd-598e-458a-adcc-2d9f102b59ec" name="learn" url="http://learn/">
+        <fileTransfer accessType="LOCAL" />
+      </webServer>
+      <webServer id="cee01f1d-a1f6-4b3e-9221-7a3675104780" name="intourist.ru - DEV" url="http://1079.testartwell.ru">
+        <fileTransfer host="1079.testartwell.ru" port="21" rootFolder="/www" username="test1079">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="83b46c3e-2682-4613-8f65-0d6f528b264a" name="tricolor-remote" url="http://tricolordev.testartwell.ru">
+        <fileTransfer host="tricolordev.testartwell.ru" port="21" rootFolder="/www" password="df9bdff2df9bdfcedf9edfe1df98dfdb" username="tricolor">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+    <sftpAdvancedGlobalOptions>
+      <SftpAdvancedOptions />
+    </sftpAdvancedGlobalOptions>
+  </component>
+</application>
+
