@@ -1,0 +1,8 @@
+<templateSet group="React">
+  <template name="rclass" value="import React, {Component} from 'react';&#10;&#10;class $VAR$ extends Component{&#10;    render(){&#10;        return (&#10;            $END$&#10;        );&#10;    }&#10;};&#10;&#10;export default $VAR$" toReformat="false" toShortenFQNames="true">
+    <variable name="VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>
